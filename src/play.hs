@@ -12,3 +12,6 @@ purify x = pure x
 
 -- ah, useful example of id, the recursive condition can result in an empty array and that composes well with purify
 -- [] <> (purify 3) <> (purify 4)
+
+rev' [] = []
+rev' (x:xs) = (rev' xs) <> (purify x)
